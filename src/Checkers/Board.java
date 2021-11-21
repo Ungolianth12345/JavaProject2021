@@ -15,7 +15,7 @@ public class Board extends JPanel{
     private final Color WHITE = Color.WHITE;
 
     // ref: https://github.com/tobyjamesthomas/Java-Checkers/blob/master/src/Checkers/Board.java
-    /*public void paint(Graphics g){
+    public void paint(Graphics g){
         for (int row = 0; row < DIMENSION; row++) {
             for (int column = 0; column < DIMENSION; column++) {
                 if (row % 2 == column % 2) {
@@ -27,7 +27,7 @@ public class Board extends JPanel{
             }
             System.out.println(row * SQ_SIZE);
         }
-    }*/
+    }
 
     // ref: https://www.youtube.com/watch?v=no4m-TIX-rc
     // ref: https://1bestcsharp.blogspot.com/2015/04/Java-How-To-Draw-Chess-Board-In-Java-Swing-Using-NetBeans.html
