@@ -12,7 +12,7 @@ public class AuthorisationGUI {
     private static JButton login;
     private static JPasswordField password;
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         JPanel panel = new JPanel();
         panel.setLayout(null);
 
@@ -40,6 +40,6 @@ public class AuthorisationGUI {
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    }
+    }*/
 
 }

@@ -12,21 +12,6 @@ public abstract class Staff implements Account {
     private int staffID;
     private int staffCount;
 
-    public Staff() {
-        this("No name", "", "", "", new GregorianCalendar(1970,1,1),
-                new GregorianCalendar(1970,1,1), 0);
-    }
-
-    public Staff(String name, String address, String username, String password, GregorianCalendar dateOfBirth, GregorianCalendar dateEmployed, int staffID) {
-        setName(name);
-        setAddress(address);
-        setUsername(username);
-        setPassword(password);
-        setDateOfBirth(dateOfBirth);
-        setDateEmployed(dateEmployed);
-        setStaffID();
-    }
-
     public String getName() {
         return name;
     }
@@ -80,5 +65,20 @@ public abstract class Staff implements Account {
 
     public String toString() {
         return "Name";
+    }
+
+    public Staff() {
+        this("No name", "", "", "", new GregorianCalendar(1970,1,1),
+                new GregorianCalendar(1970,1,1), 0);
+    }
+
+    public Staff(String name, String address, String username, String password, GregorianCalendar dateOfBirth, GregorianCalendar dateEmployed, int staffID) {
+        setName(name);
+        setAddress(address);
+        setUsername(username);
+        setPassword(password);
+        setDateOfBirth(dateOfBirth);
+        setDateEmployed(dateEmployed);
+        setStaffID();
     }
 }
