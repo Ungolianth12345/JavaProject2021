@@ -2,49 +2,10 @@ package Pharmacy;
 
 import java.util.GregorianCalendar;
 
-public abstract class Staff implements Account {
-    private String name;
-    private String address;
-    private String username;
-    private String password;
-    private GregorianCalendar dateOfBirth;
+public class Staff extends Account {
     private GregorianCalendar dateEmployed;
     private int staffID;
-    private int staffCount;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    @Override
-    public String getPassword() {
-        return password;
-    }
-
-    @Override
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public GregorianCalendar getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(GregorianCalendar dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
+    private static int count = 10000;
 
     public GregorianCalendar getDateEmployed() {
         return dateEmployed;
@@ -58,9 +19,12 @@ public abstract class Staff implements Account {
         return staffID;
     }
 
-    public void setStaffID() {
-        staffCount++;
-        this.staffID = staffCount;
+    private void autoIncrement() {
+        count++;
+    }
+
+    public void setStaffID(int staffID) {
+        this.staffID = staffID;
     }
 
     public String toString() {
@@ -69,16 +33,14 @@ public abstract class Staff implements Account {
 
     public Staff() {
         this("No name", "", "", "", new GregorianCalendar(1970,1,1),
-                new GregorianCalendar(1970,1,1), 0);
+                new GregorianCalendar(1970,1,1), count);
     }
 
-    public Staff(String name, String address, String username, String password, GregorianCalendar dateOfBirth, GregorianCalendar dateEmployed, int staffID) {
-        setName(name);
-        setAddress(address);
-        setUsername(username);
-        setPassword(password);
-        setDateOfBirth(dateOfBirth);
+    public Staff(String name, String eircode, String username, String password, GregorianCalendar dateOfBirth, GregorianCalendar dateEmployed, int staffID) {
+        super(name, eircode, username, password, dateOfBirth);
+
         setDateEmployed(dateEmployed);
-        setStaffID();
+        autoIncrement();
+        setStaffID(count);
     }
 }

@@ -1,6 +1,7 @@
 package Pharmacy;
 
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 
 public class TestDriver {
     public static void main(String[] args) {
@@ -15,7 +16,16 @@ public class TestDriver {
 
         Prescription p1 = new Prescription(10001, "Manager", testBatch);
 
-        System.out.println(p1);
+        /*Staff staff1 = new Staff("Slartibartfast", "A131CF9", "slarty", "slarty",
+                new GregorianCalendar(1952, 3, 11),
+                new GregorianCalendar(2002,8,12));
+
+        System.out.println("---\nMedicine check\n---\n" + m1);
+        System.out.println("\n---\nPrescription check\n---\n" + p1);
+        System.out.println("\n---\nStaff check\n---\n");*/
+
+        //new AuthorisationGUI();
+        new MainMenu();
     }
 }
 

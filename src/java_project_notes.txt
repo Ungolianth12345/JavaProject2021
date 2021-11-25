@@ -1,0 +1,92 @@
+Req. Engin CA ~1st December
+
+
+
+
+pharmacy
+
+staff login - account class
+manager adds medication, add/remove staff
+reg. pull up customer details + prescriptions
+staff can add details aout customer
+staff can add presc ripotion 
+
+
+prescriotions class - arraylist
+pres. = collection of medications
+brand name, price, categories (cough, cold, skin care, eye care)
+
+search
+
+renewal presciptiomn
+
+name +address
+
+calender - prescriiption interval e.g. 1 month (attribute = oimnterrval)
+prescription isseud - collection for prwescriptions for calender (dateissued per prescription) to check when it was issued to a customer
+if too recent error message saying how many days to wait
+
+
+find most opular medication in  past month (if time)
+
+
+prwxcrioptio has dateissued to tell how long to wait before renewal
+
+arraylist of prescriptions, loop through medications. find miost frequently isseud medcation
+
+binary search
+
+combobox mdication choice
+
+try catch code for I/O, check Lab 15
+
+valisdation
+
+eircode validation, link to rules
+
+complexity is things outside notes
+
+dispose method
+
+user logs in 3 times and fails - contact suys admin for password. manager can creaters new passwords. manager can know what the password is
+
+
+
+
+25/11
+
+This is going a little better than I thought, but we will still lag behind. there are other things to go into this project:
+presentation
+clean code
+VOPC diagram
+requirements document
+JavaDoc comments
+
+https://stackoverflow.com/questions/33391412/validation-for-irish-eircode eircode validation
+
+
+questions:
+main menu: different depending on manager/staff login or grey out options if staff?
+Serializable NEEDS to be impleemnted. we have to figure this out. can a class implement two things at once e.g. ActionListener & Serializable?
+
+
+
+drugs:
+*Thiosonide
+*Aeromara
+*Nutritriptan
+
+Bactrosone
+Microgard
+Naftitamine
+Choczin
+Pantestryl Meprobicin
+Soditriptan Tramapirone
+Floxusporine Ergonafine
+
+can grab categories from: https://en.wikipedia.org/wiki/Medication
+
+
+find a birthday generator
+adding dates needs to be easier
+dateissued still has to be implemented onprescription
