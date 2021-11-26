@@ -1,6 +1,9 @@
 package Pharmacy;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class TestDriver {
@@ -17,15 +20,22 @@ public class TestDriver {
         Prescription p1 = new Prescription(10001, "Manager", testBatch);
 
         /*Staff staff1 = new Staff("Slartibartfast", "A131CF9", "slarty", "slarty",
-                new GregorianCalendar(1952, 3, 11),
-                new GregorianCalendar(2002,8,12));
+                new GregorianCalendar(1952, Calendar.APRIL, 11),
+                new GregorianCalendar(2002, Calendar.SEPTEMBER,12));*/
 
-        System.out.println("---\nMedicine check\n---\n" + m1);
-        System.out.println("\n---\nPrescription check\n---\n" + p1);
-        System.out.println("\n---\nStaff check\n---\n");*/
+//        System.out.println("---\nMedicine check\n---\n" + m1);
+//        System.out.println("\n---\nPrescription check\n---\n" + p1);
+//        System.out.println("\n---\nStaff check\n---\n" + staff1);
 
-        //new AuthorisationGUI();
-        new MainMenu();
+//        new AuthorisationGUI();
+//        new MainMenu();
+        Calendar cal = new GregorianCalendar(2009, Calendar.MARCH, 6);
+        cal.add(Calendar.MONTH, 4);
+
+        DateFormat sdf = new SimpleDateFormat("d MMM yyyy");
+        String date = sdf.format(cal.getTime());
+
+        System.out.println(date);
     }
 }
 

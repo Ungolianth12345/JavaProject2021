@@ -1,11 +1,13 @@
 package Pharmacy;
 
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 
 public class Prescription {
     private int ID;
     private String customerName;
     private ArrayList<Drug> drugs;
+    private GregorianCalendar dateIssued;
 
     public int getID() {
         return ID;
@@ -29,6 +31,14 @@ public class Prescription {
 
     public void setDrugs(ArrayList<Drug> drugs) {
         this.drugs = drugs;
+    }
+
+    public GregorianCalendar getDateIssued() {
+        return dateIssued;
+    }
+
+    public void setDateIssued(GregorianCalendar dateIssued) {
+        this.dateIssued = dateIssued;
     }
 
     public String toString() {

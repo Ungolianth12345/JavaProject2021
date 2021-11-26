@@ -37,9 +37,13 @@ public class AuthorisationGUI extends JDialog implements ActionListener {
 
         this.setLayout(null);
         this.setVisible(true);
+        this.setTitle("Staff/Manager Login");
         this.setLocation(new Point(500, 300));
         this.setSize(new Dimension(400, 200));
-        this.setTitle("Staff/Manager Login");
+
+        // source: https://stackoverflow.com/questions/13731710/allowing-the-enter-key-to-press-the-submit-button-as-opposed-to-only-using-mo
+        // Amazing. All it took was one line of code, instead of implementing a KeyListener
+        this.getRootPane().setDefaultButton(login);
 
         this.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
     }
@@ -49,18 +53,20 @@ public class AuthorisationGUI extends JDialog implements ActionListener {
         String user = username.getText();
 
         /* getText for password fields are depreciated because getText() takes an immutable String that cannot be
-        * changed, and so stays in memory until garbage collected. getPassword() gives a char array that can be
-        * modified, and won't stay in memory.
-        * Origin: https://stackoverflow.com/questions/10443308/why-gettext-in-jpasswordfield-was-deprecated */
+         * changed, and so stays in memory until garbage collected. getPassword() gives a char array that can be
+         * modified, and won't stay in memory.
+         * Origin: https://stackoverflow.com/questions/10443308/why-gettext-in-jpasswordfield-was-deprecated */
         String pass = String.valueOf(password.getPassword());
 
-        if (user.equals("admin") && pass.equals("admin"))
+        if (user.equals("admin") && pass.equals("admin")) {
             JOptionPane.showMessageDialog(null, "Login Successful. Hello Manager.");
-        else
+            MainMenu m = new MainMenu();
+            m.setVisible(true);
+            this.dispose();
+        }
+        else {
             JOptionPane.showMessageDialog(null, "Username or Password mismatch ");
-
-        MainMenu m = new MainMenu();
-        m.setVisible(true);
-        this.dispose();
+            username.grabFocus();
+        }
     }
 }

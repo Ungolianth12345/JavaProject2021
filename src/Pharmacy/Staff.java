@@ -33,12 +33,11 @@ public class Staff extends Account {
 
     public Staff() {
         this("No name", "", "", "", new GregorianCalendar(1970,1,1),
-                new GregorianCalendar(1970,1,1), count);
+                new GregorianCalendar(1970,1,1));
     }
 
-    public Staff(String name, String eircode, String username, String password, GregorianCalendar dateOfBirth, GregorianCalendar dateEmployed, int staffID) {
+    public Staff(String name, String eircode, String username, String password, GregorianCalendar dateOfBirth, GregorianCalendar dateEmployed) {
         super(name, eircode, username, password, dateOfBirth);
-
         setDateEmployed(dateEmployed);
         autoIncrement();
         setStaffID(count);
