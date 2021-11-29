@@ -35,6 +35,10 @@ public class AuthorisationGUI extends JDialog implements ActionListener {
         this.add(password);
         this.add(login);
 
+        // Source: https://stackoverflow.com/questions/1614772/how-to-change-jframe-icon
+        ImageIcon titleImg = new ImageIcon("src\\Pharmacy\\Icons\\cross.png");
+        this.setIconImage(titleImg.getImage());
+
         this.setLayout(null);
         this.setVisible(true);
         this.setTitle("Staff/Manager Login");
@@ -60,7 +64,7 @@ public class AuthorisationGUI extends JDialog implements ActionListener {
 
         if (user.equals("admin") && pass.equals("admin")) {
             JOptionPane.showMessageDialog(null, "Login Successful. Hello Manager.");
-            MainMenu m = new MainMenu();
+            MainMenuGUI m = new MainMenuGUI();
             m.setVisible(true);
             this.dispose();
         }

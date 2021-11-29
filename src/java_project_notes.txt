@@ -109,3 +109,18 @@ can grab categories from: https://en.wikipedia.org/wiki/Medication
 find a birthday generator
 adding dates needs to be easier
 dateissued still has to be implemented onprescription
+
+
+28/11
+should managers have staffID, managerID or nothing?????
+
+Main menu:
+    Add/Edit Staff
+    Add/Edit Medicine
+    Prescribe Medicine
+
+For Christ sake add Serializable
+
+https://stackoverflow.com/questions/4548816/when-should-we-implement-serializable-interface
+basically serialization is bad because it causes security flaws.
+I'm still going to use it. when I get better at this program I'll use something better like YAML or HJSON.

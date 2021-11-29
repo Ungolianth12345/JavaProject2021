@@ -1,19 +1,12 @@
 package Pharmacy;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 
-public class Staff extends Account {
-    private GregorianCalendar dateEmployed;
+public class Staff extends Employee {
     private int staffID;
     private static int count = 10000;
-
-    public GregorianCalendar getDateEmployed() {
-        return dateEmployed;
-    }
-
-    public void setDateEmployed(GregorianCalendar dateEmployed) {
-        this.dateEmployed = dateEmployed;
-    }
 
     public int getStaffID() {
         return staffID;
@@ -27,8 +20,9 @@ public class Staff extends Account {
         this.staffID = staffID;
     }
 
+    @Override
     public String toString() {
-        return "Name";
+        return super.toString() + "\nStaff ID: " + getStaffID();
     }
 
     public Staff() {
@@ -36,9 +30,9 @@ public class Staff extends Account {
                 new GregorianCalendar(1970,1,1));
     }
 
-    public Staff(String name, String eircode, String username, String password, GregorianCalendar dateOfBirth, GregorianCalendar dateEmployed) {
-        super(name, eircode, username, password, dateOfBirth);
-        setDateEmployed(dateEmployed);
+    public Staff(String name, String eircode, String username, String password, GregorianCalendar dateOfBirth,
+                 GregorianCalendar dateEmployed) {
+        super(name, eircode, username, password, dateOfBirth, dateEmployed);
         autoIncrement();
         setStaffID(count);
     }

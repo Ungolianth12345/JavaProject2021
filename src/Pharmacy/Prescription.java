@@ -1,6 +1,9 @@
 package Pharmacy;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class Prescription {
@@ -47,16 +50,23 @@ public class Prescription {
             prescrip.append(getDrugs().get(i)).append('\n');
         }
 
-        return prescrip.toString();
+        // seems as though I can't edit dateOfBirth to accommodate a string.
+        // Source: https://stackoverflow.com/questions/4169634/going-from-mm-dd-yyyy-to-dd-mmm-yyyy-in-java
+        DateFormat sdf = new SimpleDateFormat("dd MMM yyyy");
+        String date = sdf.format(getDateIssued().getTime());
+
+        return prescrip.toString() + "Date issued: " + date;
     }
 
     public Prescription() {
-        this(0, "No name", new ArrayList<Drug>());
+        this(0, "No name", new ArrayList<Drug>(),
+                new GregorianCalendar(1970, Calendar.JANUARY,1));
     }
 
-    public Prescription(int ID, String customerName, ArrayList<Drug> drugs) {
+    public Prescription(int ID, String customerName, ArrayList<Drug> drugs, GregorianCalendar dateIssued) {
         setID(ID);
         setCustomerName(customerName);
         setDrugs(drugs);
+        setDateIssued(dateIssued);
     }
 }

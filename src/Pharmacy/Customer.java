@@ -1,4 +1,5 @@
 package Pharmacy;
 
-public class Customer {
+public class Customer extends Person {
+
 }

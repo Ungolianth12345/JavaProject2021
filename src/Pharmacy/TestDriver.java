@@ -17,25 +17,47 @@ public class TestDriver {
         testBatch.add(m2);
         testBatch.add(m3);
 
-        Prescription p1 = new Prescription(10001, "Manager", testBatch);
+        Prescription p1 = new Prescription(10001, "Manager", testBatch,
+                new GregorianCalendar(2021, Calendar.NOVEMBER, 21));
 
-        /*Staff staff1 = new Staff("Slartibartfast", "A131CF9", "slarty", "slarty",
-                new GregorianCalendar(1952, Calendar.APRIL, 11),
-                new GregorianCalendar(2002, Calendar.SEPTEMBER,12));*/
+        Staff staff1 = new Staff("Slartibartfast", "A131CF9", "slarty", "slarty",
+                new GregorianCalendar(1952, Calendar.APRIL, 9),
+                new GregorianCalendar(2002, Calendar.SEPTEMBER,12));
+
+        Staff staff2 = new Staff("Alice O' Connor", "F527D79", "alioc", "jaques",
+                new GregorianCalendar(1982, Calendar.JUNE, 22),
+                new GregorianCalendar(2009, Calendar.FEBRUARY, 12));
+
+        ArrayList<Staff> staffManaged = new ArrayList<>();
+        staffManaged.add(staff1);
+        staffManaged.add(staff2);
+
+        Manager manager1 = new Manager("Patrick Sullivan", "J45M29", "admin", "admin",
+                new GregorianCalendar(1971, Calendar.AUGUST, 22),
+                new GregorianCalendar(1999, Calendar.JANUARY, 5), staffManaged);
+
+        Customer customer1 = new Customer();
 
 //        System.out.println("---\nMedicine check\n---\n" + m1);
 //        System.out.println("\n---\nPrescription check\n---\n" + p1);
-//        System.out.println("\n---\nStaff check\n---\n" + staff1);
+//        System.out.println("\n---\nStaff check\n---\n" + staff1 + "\n\n" + staff2);
+//        System.out.println("\n---\nManager check\n---\n" + manager1);
+//        System.out.println("\n---\nCustomer check\n---\n" + customer1);
 
 //        new AuthorisationGUI();
-//        new MainMenu();
-        Calendar cal = new GregorianCalendar(2009, Calendar.MARCH, 6);
-        cal.add(Calendar.MONTH, 4);
+        new MainMenuGUI();
+//        new AddEditStaffGUI();
 
-        DateFormat sdf = new SimpleDateFormat("d MMM yyyy");
+        /*GregorianCalendar cal = new DateChooser(new MainMenuGUI()).getDateChosen();
+        DateFormat sdf = new SimpleDateFormat("dd MMM yyyy");
         String date = sdf.format(cal.getTime());
+        System.out.println(date);*/
 
-        System.out.println(date);
+        /*GregorianCalendar cal = new GregorianCalendar(2021, Calendar.NOVEMBER, 28);
+        System.out.println(cal);
+        System.out.println(cal.toZonedDateTime().getDayOfMonth());
+        System.out.println(cal.toZonedDateTime().getMonth());
+        System.out.println(cal.toZonedDateTime().getYear());*/
     }
 }
 
