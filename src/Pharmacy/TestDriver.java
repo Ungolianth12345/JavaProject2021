@@ -1,5 +1,7 @@
 package Pharmacy;
 
+import javax.swing.*;
+import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -45,7 +47,7 @@ public class TestDriver {
 //        System.out.println("\n---\nCustomer check\n---\n" + customer1);
 
 //        new AuthorisationGUI();
-        new MainMenuGUI();
+//        new MainMenuGUI();
 //        new AddEditStaffGUI();
 
         /*GregorianCalendar cal = new DateChooser(new MainMenuGUI()).getDateChosen();
@@ -58,6 +60,33 @@ public class TestDriver {
         System.out.println(cal.toZonedDateTime().getDayOfMonth());
         System.out.println(cal.toZonedDateTime().getMonth());
         System.out.println(cal.toZonedDateTime().getYear());*/
+
+
+        File out = new File("src/Pharmacy/out.dat");
+
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream(out);
+
+            Drug d1 = new Drug("Thiosonide", "250 mg tablets", 2.49, "ColdFlu");
+            Drug d2 = new Drug("Nutritriptan", "300 mg tablets", 5.49, "Digestion");
+            Drug d3 = new Drug("Aeromara", "500 ml", 12.99, "Respiratory");
+
+            ObjectOutputStream objectOutStream = new ObjectOutputStream(fileOutputStream);
+
+            objectOutStream.writeObject(d1);
+            objectOutStream.writeObject(d2);
+            objectOutStream.writeObject(d3);
+
+            fileOutputStream.close();
+        } catch (FileNotFoundException fnfe) {
+            fnfe.getStackTrace();
+            JOptionPane.showMessageDialog(null,"File could not be found!",
+                    "Problem Finding File!",JOptionPane.ERROR_MESSAGE);
+        } catch (IOException ioe) {
+            ioe.getStackTrace();
+            JOptionPane.showMessageDialog(null,"File could not be written!",
+                    "Problem Writing to File!",JOptionPane.ERROR_MESSAGE);
+        }
     }
 }
 

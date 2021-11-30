@@ -1,0 +1,2 @@
+This package is defunct. I realized I was just copying code from places and no original code could come from me.
+I leave this here as proof that I attempted something before jumping to something more practical.

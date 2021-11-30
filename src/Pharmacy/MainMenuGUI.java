@@ -2,9 +2,29 @@ package Pharmacy;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class MainMenuGUI extends JFrame {
+public class MainMenuGUI extends JFrame implements ActionListener {
     public MainMenuGUI() {
+        JMenuBar menuBar;
+        JMenu fileMenu = createFileMenu();
+        JMenu staffMenu = createStaffMenu();
+        JMenu medicationMenu = createMedicationMenu();
+        JMenu prescriptionMenu = createPrescriptionMenu();
+
+        menuBar = new JMenuBar();
+        this.setJMenuBar(menuBar);
+        menuBar.setBackground(Color.GREEN);
+        menuBar.add(fileMenu);
+        menuBar.add(prescriptionMenu);
+        menuBar.add(staffMenu);
+        menuBar.add(medicationMenu);
+
+        // Source: https://gist.github.com/Bios-Marcel/4b4c38c00c259e711f4757c12d4dc7c1
+//        staffMenu.setEnabled(false);
+//        medicationMenu.setEnabled(false);
+
         // Source: https://stackoverflow.com/questions/1614772/how-to-change-jframe-icon
         ImageIcon titleImg = new ImageIcon("src\\Pharmacy\\Icons\\cross.png");
         this.setIconImage(titleImg.getImage());
@@ -15,5 +35,82 @@ public class MainMenuGUI extends JFrame {
         this.setLocation(new Point(400, 100));
         this.setSize(new Dimension(700, 600));
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String menuName;
+        menuName = e.getActionCommand();
+
+        if (menuName.equals("Quit")) {
+            System.exit(0);
+        } else {
+            JOptionPane.showMessageDialog(this, "Menu item " + menuName + " is selected.");
+        }
+    }
+
+    public JMenu createFileMenu() {
+        JMenuItem item;
+        JMenu fileMenu;
+        fileMenu = new JMenu("File");
+
+        item = new JMenuItem("Open");
+        item.addActionListener( this );
+        fileMenu.add( item );
+
+        item = new JMenuItem("Quit");
+        item.addActionListener( this );
+        fileMenu.add(item);
+
+        return fileMenu;
+    }
+
+    public JMenu createStaffMenu() {
+        JMenuItem item;
+        JMenu staffMenu;
+        staffMenu = new JMenu("Staff");
+
+        item = new JMenuItem("Add Staff");
+        item.addActionListener( this );
+        staffMenu.add( item );
+
+        item = new JMenuItem("Edit Staff");
+        item.addActionListener( this );
+        staffMenu.add( item );
+
+        return staffMenu;
+    }
+
+    public JMenu createMedicationMenu() {
+        JMenuItem item;
+        JMenu medicationMenu;
+        medicationMenu = new JMenu("Medication");
+
+        item = new JMenuItem("Add Medication");
+        item.addActionListener( this );
+        medicationMenu.add( item );
+
+        item = new JMenuItem("Edit Medication");
+        item.addActionListener( this );
+        medicationMenu.add( item );
+
+        return medicationMenu;
+    }
+
+    public JMenu createPrescriptionMenu() {
+        JMenuItem item;
+        JMenu prescriptionMenu;
+
+        prescriptionMenu = new JMenu("Prescriptions");
+
+        item = new JMenuItem("Add Prescription");
+        item.addActionListener( this );
+        prescriptionMenu.add( item );
+
+        item = new JMenuItem("Renew Prescription");
+        item.addActionListener( this );
+        prescriptionMenu.add( item );
+
+        return prescriptionMenu;
     }
 }
