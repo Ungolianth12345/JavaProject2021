@@ -7,25 +7,21 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class Prescription {
-    private int ID;
-    private String customerName;
+    private int PrescriptionID;
+    private static int count = 10000;
     private ArrayList<Drug> drugs;
     private GregorianCalendar dateIssued;
 
-    public int getID() {
-        return ID;
+    public int getPrescriptionID() {
+        return PrescriptionID;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    private void autoIncrement() {
+        count++;
     }
 
-    public String getCustomerName() {
-        return customerName;
-    }
-
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
+    public void setID(int PrescriptionID) {
+        this.PrescriptionID = PrescriptionID;
     }
 
     public ArrayList<Drug> getDrugs() {
@@ -45,7 +41,7 @@ public class Prescription {
     }
 
     public String toString() {
-        StringBuilder prescrip = new StringBuilder("Customer name: " + getCustomerName() + "\nMedicine requested: \n");
+        StringBuilder prescrip = new StringBuilder("Medicine requested: \n");
         for (int i = 0; i < getDrugs().size(); i++) {
             prescrip.append(getDrugs().get(i)).append('\n');
         }
@@ -59,14 +55,14 @@ public class Prescription {
     }
 
     public Prescription() {
-        this(0, "No name", new ArrayList<Drug>(),
+        this(new ArrayList<Drug>(),
                 new GregorianCalendar(1970, Calendar.JANUARY,1));
     }
 
-    public Prescription(int ID, String customerName, ArrayList<Drug> drugs, GregorianCalendar dateIssued) {
-        setID(ID);
-        setCustomerName(customerName);
+    public Prescription(ArrayList<Drug> drugs, GregorianCalendar dateIssued) {
         setDrugs(drugs);
         setDateIssued(dateIssued);
+        autoIncrement();
+        setID(count);
     }
 }

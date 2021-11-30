@@ -19,12 +19,12 @@ public class TestDriver {
         testBatch.add(m2);
         testBatch.add(m3);
 
-        Prescription p1 = new Prescription(10001, "Manager", testBatch,
+        Prescription p1 = new Prescription(testBatch,
                 new GregorianCalendar(2021, Calendar.NOVEMBER, 21));
 
         Staff staff1 = new Staff("Slartibartfast", "A131CF9", "slarty", "slarty",
                 new GregorianCalendar(1952, Calendar.APRIL, 9),
-                new GregorianCalendar(2002, Calendar.SEPTEMBER,12));
+                new GregorianCalendar(2002, Calendar.SEPTEMBER, 12));
 
         Staff staff2 = new Staff("Alice O' Connor", "F527D79", "alioc", "jaques",
                 new GregorianCalendar(1982, Calendar.JUNE, 22),
@@ -34,14 +34,16 @@ public class TestDriver {
         staffManaged.add(staff1);
         staffManaged.add(staff2);
 
-        Manager manager1 = new Manager("Patrick Sullivan", "J45M29", "admin", "admin",
+        Manager manager1 = new Manager("Patrick Sullivan", "J454M29", "admin", "admin",
                 new GregorianCalendar(1971, Calendar.AUGUST, 22),
                 new GregorianCalendar(1999, Calendar.JANUARY, 5), staffManaged);
 
-        Customer customer1 = new Customer();
+//        Customer customer1 = new Customer("Rose Steinem", "G567M34", "rosest", "rosest",
+//                new GregorianCalendar(1982, Calendar.MARCH, 8),
+//                new Prescription(m1 + m3, new GregorianCalendar(2021, Calendar.NOVEMBER, 30));
 
 //        System.out.println("---\nMedicine check\n---\n" + m1);
-//        System.out.println("\n---\nPrescription check\n---\n" + p1);
+        System.out.println("\n---\nPrescription check\n---\n" + p1);
 //        System.out.println("\n---\nStaff check\n---\n" + staff1 + "\n\n" + staff2);
 //        System.out.println("\n---\nManager check\n---\n" + manager1);
 //        System.out.println("\n---\nCustomer check\n---\n" + customer1);
@@ -62,7 +64,8 @@ public class TestDriver {
         System.out.println(cal.toZonedDateTime().getYear());*/
 
 
-        File out = new File("src/Pharmacy/out.dat");
+        // Can't figure this out.
+        /*File out = new File("src/Pharmacy/out.dat");
 
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(out);
@@ -80,13 +83,36 @@ public class TestDriver {
             fileOutputStream.close();
         } catch (FileNotFoundException fnfe) {
             fnfe.getStackTrace();
-            JOptionPane.showMessageDialog(null,"File could not be found!",
-                    "Problem Finding File!",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "File could not be found!",
+                    "Problem Finding File!", JOptionPane.ERROR_MESSAGE);
         } catch (IOException ioe) {
             ioe.getStackTrace();
-            JOptionPane.showMessageDialog(null,"File could not be written!",
-                    "Problem Writing to File!",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "File could not be written!",
+                    "Problem Writing to File!", JOptionPane.ERROR_MESSAGE);
         }
+
+        File inFile = new File("src/Pharmacy/out.dat");
+
+        try {
+            FileInputStream inStream = new FileInputStream(inFile);
+
+            ObjectInputStream objectInStream = new ObjectInputStream(inStream);
+
+            Drug d1 = (Drug) objectInStream.readObject();
+            Drug d2 = (Drug) objectInStream.readObject();
+            Drug d3 = (Drug) objectInStream.readObject();
+
+            JOptionPane.showMessageDialog(null, "State of standalone objects read from the file are:\n\n" + d1 + "\n" +
+                    d2 + "\n" + d3, "Output from File", JOptionPane.INFORMATION_MESSAGE);
+
+            inStream.close();
+        } catch (FileNotFoundException fnfe) {
+            fnfe.printStackTrace();
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        } catch (ClassNotFoundException cnfe) {
+            cnfe.printStackTrace();
+        }*/
     }
 }
 
