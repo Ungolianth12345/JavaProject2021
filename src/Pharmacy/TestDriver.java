@@ -9,7 +9,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class TestDriver {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         Drug m1 = new Drug("Thiosonide", "250 mg tablets", 2.49, "ColdFlu");
         Drug m2 = new Drug("Nutritriptan", "300 mg tablets", 5.49, "Digestion");
         Drug m3 = new Drug("Aeromara", "500 ml", 12.99, "Respiratory");
@@ -43,7 +43,7 @@ public class TestDriver {
 //                new Prescription(m1 + m3, new GregorianCalendar(2021, Calendar.NOVEMBER, 30));
 
 //        System.out.println("---\nMedicine check\n---\n" + m1);
-        System.out.println("\n---\nPrescription check\n---\n" + p1);
+//        System.out.println("\n---\nPrescription check\n---\n" + p1);
 //        System.out.println("\n---\nStaff check\n---\n" + staff1 + "\n\n" + staff2);
 //        System.out.println("\n---\nManager check\n---\n" + manager1);
 //        System.out.println("\n---\nCustomer check\n---\n" + customer1);
@@ -51,6 +51,12 @@ public class TestDriver {
 //        new AuthorisationGUI();
 //        new MainMenuGUI();
 //        new AddEditStaffGUI();
+        new AddEditDrugsGUI();
+
+        /*ArrayList<Drug> drugs = new ArrayList<Drug>();
+        drugs.add(new Drug("Bactrosone", "300 ml", 8.99, "Pain"));
+
+        System.out.println(drugs.get(0).getBrandName());*/
 
         /*GregorianCalendar cal = new DateChooser(new MainMenuGUI()).getDateChosen();
         DateFormat sdf = new SimpleDateFormat("dd MMM yyyy");
@@ -64,7 +70,7 @@ public class TestDriver {
         System.out.println(cal.toZonedDateTime().getYear());*/
 
 
-        // Can't figure this out.
+        // It was the simplest thing: add Serializable to class implementation
         /*File out = new File("src/Pharmacy/out.dat");
 
         try {
@@ -102,8 +108,8 @@ public class TestDriver {
             Drug d2 = (Drug) objectInStream.readObject();
             Drug d3 = (Drug) objectInStream.readObject();
 
-            JOptionPane.showMessageDialog(null, "State of standalone objects read from the file are:\n\n" + d1 + "\n" +
-                    d2 + "\n" + d3, "Output from File", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "State of standalone objects read from the file " +
+                    "are:\n\n" + d1 + "\n" + d2 + "\n" + d3, "Output from File", JOptionPane.INFORMATION_MESSAGE);
 
             inStream.close();
         } catch (FileNotFoundException fnfe) {

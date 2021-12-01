@@ -94,6 +94,10 @@ public class MainMenuGUI extends JFrame implements ActionListener {
         item.addActionListener( this );
         medicationMenu.add( item );
 
+        item = new JMenuItem("View Medication");
+        item.addActionListener( this );
+        medicationMenu.add( item );
+
         return medicationMenu;
     }
 

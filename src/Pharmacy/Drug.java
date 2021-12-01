@@ -1,6 +1,10 @@
 package Pharmacy;
 
-public class Drug {
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Drug implements Serializable {
     private String brandName;
     private String dosage;
     private double price;
@@ -41,7 +45,18 @@ public class Drug {
     public String toString() {
         /*return "Brand name: " + getBrandName() + "\tDosage: " + getDosage() + "\tPrice: " + getPrice() +
                 "\tCategory: " + getCategory();*/
-        return getBrandName() + "\t" + getDosage() + "\t" + getPrice() + "\t" + getCategory();
+        return "Brand Name: " + getBrandName() + "\nDosage: " + getDosage() + "\nPrice: " + getPrice() +
+                "\nCategory: " + getCategory();
+    }
+
+    public static String[] values() {
+        String[] categories = {"Cold & Flu", "Respiratory", "Digestion", "Pain"};
+        Arrays.sort(categories);
+        return categories;
+    }
+
+    public Drug() {
+        this("No name", "No dosage", 0.00, "N/A");
     }
 
     public Drug(String brandName, String dosage, double price, String category) {
