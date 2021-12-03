@@ -42,10 +42,12 @@ public class MainMenuGUI extends JFrame implements ActionListener {
         String menuName;
         menuName = e.getActionCommand();
 
-        if (menuName.equals("Quit")) {
-            System.exit(0);
-        } else {
-            JOptionPane.showMessageDialog(this, "Menu item " + menuName + " is selected.");
+        // It asked if it wanted to make the switch-case enhanced, so I did.
+        switch (menuName) {
+            case "Quit" -> System.exit(0);
+            case "Add Staff", "Edit Staff" -> new AddEditStaffGUI();
+            case "Add Medication", "Edit Medication" -> new AddEditDrugsGUI();
+            default -> JOptionPane.showMessageDialog(this, "Menu item " + menuName + " is selected.");
         }
     }
 

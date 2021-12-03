@@ -1,7 +1,15 @@
-Req. Engin CA 2nd December: MCQs
-learn the notes
+3/12
 
+Go over comments and requirements doc.
+VOPC diagrams option not available on free edition.
 
+This program may be greatly flawed, but at least we did something.
+I don't know if we'll get the problem solving marks, a lot of this was difficult enough,
+coupled with the fact we had no idea for our project until one week into it.
+Serialisation has failed.
+JavaDoc: I doubt I'll get anything for this.
+
+After all this, email the link to him.
 
 
 pharmacy

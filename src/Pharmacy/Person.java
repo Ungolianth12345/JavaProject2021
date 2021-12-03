@@ -53,6 +53,7 @@ public abstract class Person {
         this.password = password;
     }
 
+    // It's too late, I couldn't get this implemented
     public String getAccount() {
         return getUsername() + ", " + getPassword();
     }

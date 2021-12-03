@@ -57,9 +57,11 @@ public class AddEditDrugsGUI extends JFrame implements ActionListener {
         this.getRootPane().setDefaultButton(addDrug);
 
         ArrayList<Drug> drugList = new ArrayList<>();
-        File inFile = new File("src/Pharmacy/drugs.dat");
+        //File inFile = new File("src/Pharmacy/drugs.dat");
 
-        try {
+        // I literally don't know what to do. It keeps talking about ArrayList cannot be cast to Drug.
+        // A real shame, adding inputted drugs to a menu seemed ingenious to me.
+        /*try {
             FileInputStream inStream = new FileInputStream(inFile);
             ObjectInputStream objectInStream = new ObjectInputStream(inStream);
 
@@ -73,11 +75,12 @@ public class AddEditDrugsGUI extends JFrame implements ActionListener {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-        }
+        }*/
 
         /*
          * Source: https://newbedev.com/how-do-i-populate-a-jcombobox-with-an-arraylist
          * */
+        // Works better with serialisation, but I can't get it to work.
         int dArraySize = drugList.size() + 1;
         String[] dArray = new String[dArraySize];
         dArray[0] = "---";
@@ -112,7 +115,9 @@ public class AddEditDrugsGUI extends JFrame implements ActionListener {
 
         this.add(drugCombo);
 
-        // Source: https://stackoverflow.com/questions/1614772/how-to-change-jframe-icon
+        /*
+         * Source: https://stackoverflow.com/questions/1614772/how-to-change-jframe-icon
+         */
         ImageIcon titleImg = new ImageIcon("src\\Pharmacy\\Icons\\cross.png");
         this.setIconImage(titleImg.getImage());
 

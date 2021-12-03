@@ -59,7 +59,7 @@ public class AuthorisationGUI extends JDialog implements ActionListener {
         /* getText for password fields are depreciated because getText() takes an immutable String that cannot be
          * changed, and so stays in memory until garbage collected. getPassword() gives a char array that can be
          * modified, and won't stay in memory.
-         * Origin: https://stackoverflow.com/questions/10443308/why-gettext-in-jpasswordfield-was-deprecated */
+         * Source: https://stackoverflow.com/questions/10443308/why-gettext-in-jpasswordfield-was-deprecated */
         String pass = String.valueOf(password.getPassword());
 
         if (user.equals("admin") && pass.equals("admin")) {

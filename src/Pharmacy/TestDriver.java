@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+// Scratch-pad file for testing.
 public class TestDriver {
     public static void main(String[] args) throws FileNotFoundException {
         Drug m1 = new Drug("Thiosonide", "250 mg tablets", 2.49, "ColdFlu");
@@ -51,7 +52,10 @@ public class TestDriver {
 //        new AuthorisationGUI();
 //        new MainMenuGUI();
 //        new AddEditStaffGUI();
-        new AddEditDrugsGUI();
+//        new AddEditDrugsGUI();
+
+
+
 
         /*ArrayList<Drug> drugs = new ArrayList<Drug>();
         drugs.add(new Drug("Bactrosone", "300 ml", 8.99, "Pain"));
