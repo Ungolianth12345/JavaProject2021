@@ -44,9 +44,29 @@ public class AddEditStaffGUI extends JFrame implements ActionListener {
         dateOfBirthDay = new JTextField();
         dateOfBirthDay.setBounds(240, 127, 30, 28);
 
+        /*******************************************************************
+         *Title: How to Create Combo Boxes in Java
+         *Author: Doug Lowe
+         *Site owner/sponsor: dummies.com
+         *Date: unknown
+         *Code Version: unknown
+         *Availability: https://www.dummies.com/programming/java/how-to-create-combo-boxes-in-java/ (Accessed: Nov 29 2021)
+         *Modified: Code refactored
+         *******************************************************************/
+
+        /*******************************************************************
+         *Title: How to get the month from a combobox and make it a month in a date
+         *Author: ΦXocę 웃 Пepeúpa ツ
+         *Site owner/sponsor: stackoverflow.com
+         *Date: Aug 16 2017
+         *Code Version: Aug 16 2017
+         *Availability: https://stackoverflow.com/questions/45718098/how-to-get-the-month-from-a-combobox-and-make-it-a-month-in-a-date (Accessed: Nov 29 2021)
+         *Modified: Code refactored
+         *******************************************************************/
         // Source: https://www.dummies.com/programming/java/how-to-create-combo-boxes-in-java/ for combobox
         // Source: https://stackoverflow.com/questions/45718098/how-to-get-the-month-from-a-combobox-and-make-it-a-month-in-a-date?noredirect=1&lq=1
         // for a more useful combobox.
+
         dateOfBirthMonth = new JComboBox<>(Month.values());
         dateOfBirthMonth.setBounds(275, 127, 110, 28);
         dateOfBirthYear = new JTextField();
@@ -58,9 +78,6 @@ public class AddEditStaffGUI extends JFrame implements ActionListener {
 
         dateEmployedDay = new JTextField();
         dateEmployedDay.setBounds(240, 157, 30, 28);
-        // Source: https://www.dummies.com/programming/java/how-to-create-combo-boxes-in-java/ for combobox
-        // Source: https://stackoverflow.com/questions/45718098/how-to-get-the-month-from-a-combobox-and-make-it-a-month-in-a-date?noredirect=1&lq=1
-        // for a more useful combobox.
         dateEmployedMonth = new JComboBox<>(Month.values());
         dateEmployedMonth.setBounds(275, 157, 110, 28);
         dateEmployedYear = new JTextField();
@@ -101,7 +118,15 @@ public class AddEditStaffGUI extends JFrame implements ActionListener {
         this.add(addStaff);
         this.getRootPane().setDefaultButton(addStaff);
 
-        // Source: https://stackoverflow.com/questions/1614772/how-to-change-jframe-icon
+        /*******************************************************************
+         *Title: How to change JFrame icon [duplicate]
+         *Author: BFree
+         *Site owner/sponsor: stackoverflow.com
+         *Date: Oct 23 2009
+         *Code Version: Aug 31 2015
+         *Availability: https://stackoverflow.com/questions/1614772/how-to-change-jframe-icon (Accessed: Nov 29 2021)
+         *Modified: Code refactored
+         *******************************************************************/
         ImageIcon titleImg = new ImageIcon("src\\Pharmacy\\Icons\\cross.png");
         this.setIconImage(titleImg.getImage());
 
@@ -154,12 +179,32 @@ public class AddEditStaffGUI extends JFrame implements ActionListener {
             }
 
             else if (!eircode.getText().equals("")) {
+                /*******************************************************************
+                 *Title: Validation for Irish Eircode
+                 *Author: Asunez
+                 *Site owner/sponsor: stackoverflow.com
+                 *Date: Oct 29 2015
+                 *Code Version: March 26 2021
+                 *Availability: https://stackoverflow.com/questions/33391412/validation-for-irish-eircode (Accessed: Nov 29 2021)
+                 *Modified: Code refactored
+                 *******************************************************************/
+
+                /*******************************************************************
+                 *Title: Regex doesn't work in String.matches()
+                 *Author: fge
+                 *Site owner/sponsor: stackoverflow.com
+                 *Date: Jan 19 2012
+                 *Code Version: Jan 19 2012
+                 *Availability: https://stackoverflow.com/questions/8923398/regex-doesnt-work-in-string-matches (Accessed: Nov 29 2021)
+                 *Modified: Code refactored
+                 *******************************************************************/
+
                 /* Source for regex: https://stackoverflow.com/questions/33391412/validation-for-irish-eircode
-                * Source for pattern and matcher: https://stackoverflow.com/questions/8923398/regex-doesnt-work-in-string-matches
-                * Now THIS is a proper showing of my love for regex. Useful but looks like a language straight out of
-                * Lovecraft.
-                * Imperfect, this was causing problems, namely staff couldn't be added for whatever reason unless the
-                * next statement (username) was an if statement instead of an else if statement. */
+                 * Source for pattern and matcher: https://stackoverflow.com/questions/8923398/regex-doesnt-work-in-string-matches
+                 * Now THIS is a proper showing of my love for regex. Useful but looks like a language straight out of
+                 * Lovecraft.
+                 * Imperfect, this was causing problems, namely staff couldn't be added for whatever reason unless the
+                 * next statement (username) was an if statement instead of an else if statement. */
                 Pattern p = Pattern.compile("(?:^[AC-FHKNPRTV-Y][0-9]{2}|D6W)[ -]?[0-9AC-FHKNPRTV-Y]{4}$");
                 Matcher m = p.matcher(eircode.getText());
                 if (!m.find()) {

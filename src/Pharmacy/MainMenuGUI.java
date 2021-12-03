@@ -21,11 +21,27 @@ public class MainMenuGUI extends JFrame implements ActionListener {
         menuBar.add(staffMenu);
         menuBar.add(medicationMenu);
 
-        // Source: https://gist.github.com/Bios-Marcel/4b4c38c00c259e711f4757c12d4dc7c1
+        /*******************************************************************
+         *Title: Test disabling a JMenu in Swing
+         *Author: Bios-Marcel
+         *Site owner/sponsor: gist.github.com
+         *Date: Apr 17 2018
+         *Code Version: Apr 17 2018
+         *Availability: https://gist.github.com/Bios-Marcel/4b4c38c00c259e711f4757c12d4dc7c1 (Accessed: Nov 30 2021)
+         *Modified: Code refactored
+         *******************************************************************/
 //        staffMenu.setEnabled(false);
 //        medicationMenu.setEnabled(false);
 
-        // Source: https://stackoverflow.com/questions/1614772/how-to-change-jframe-icon
+        /*******************************************************************
+         *Title: How to change JFrame icon [duplicate]
+         *Author: BFree
+         *Site owner/sponsor: stackoverflow.com
+         *Date: Oct 23 2009
+         *Code Version: Aug 31 2015
+         *Availability: https://stackoverflow.com/questions/1614772/how-to-change-jframe-icon (Accessed: Nov 29 2021)
+         *Modified: Code refactored
+         *******************************************************************/
         ImageIcon titleImg = new ImageIcon("src\\Pharmacy\\Icons\\cross.png");
         this.setIconImage(titleImg.getImage());
 

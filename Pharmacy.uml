@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>Pharmacy</OriginalElement>
+  <nodes>
+    <node x="1208.8283333333334" y="528.5">Pharmacy.Drug</node>
+    <node x="453.91666666666674" y="306.0">Pharmacy.Employee</node>
+    <node x="1615.3329166666667" y="0.0">Pharmacy.Icons</node>
+    <node x="187.5" y="1874.0">Pharmacy.MainDriver</node>
+    <node x="144.0" y="1417.0">Pharmacy.MainMenuGUI</node>
+    <node x="1237.8329166666667" y="968.5">Pharmacy.Prescription</node>
+    <node x="855.5370833333334" y="1461.0">Pharmacy.TestDriver</node>
+    <node x="404.18708333333336" y="1035.0">Pharmacy.Manager</node>
+    <node x="73.25" y="328.5">Pharmacy.DateChooser.ButtonEventHandler</node>
+    <node x="975.1870833333334" y="947.0">Pharmacy.AddEditDrugsGUI</node>
+    <node x="350.77041666666673" y="550.0">Pharmacy.Staff</node>
+    <node x="0.0" y="484.0">Pharmacy.DateChooser</node>
+    <node x="842.4745833333334" y="0.0">Pharmacy.Person</node>
+    <node x="144.0" y="1634.0">Pharmacy.AuthorisationGUI</node>
+    <node x="1209.1458333333335" y="1438.5">Pharmacy.Customer</node>
+    <node x="52.0" y="837.0">Pharmacy.AddEditStaffGUI</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Pharmacy.MainMenuGUI" target="Pharmacy.AddEditStaffGUI" relationship="CREATE">
+      <point x="-59.0" y="-83.5" />
+      <point x="203.0" y="1396.0" />
+      <point x="192.0" y="1396.0" />
+      <point x="0.0" y="249.0" />
+    </edge>
+    <edge source="Pharmacy.TestDriver" target="Pharmacy.Drug" relationship="CREATE">
+      <point x="18.625" y="-39.5" />
+      <point x="948.6620833333334" y="1386.0" />
+      <point x="1221.6870833333332" y="1386.0" />
+      <point x="1221.6870833333332" y="816.0" />
+      <point x="1160.3333333333335" y="816.0" />
+      <point x="1160.3333333333335" y="806.0" />
+      <point x="1267.3283333333334" y="806.0" />
+      <point x="-58.5" y="106.0" />
+    </edge>
+    <edge source="Pharmacy.Prescription" target="Pharmacy.Drug" relationship="TO_MANY">
+      <point x="79.0" y="-117.5" />
+      <point x="1474.8329166666667" y="816.0" />
+      <point x="1384.3283333333334" y="816.0" />
+      <point x="58.5" y="106.0" />
+    </edge>
+    <edge source="Pharmacy.Staff" target="Pharmacy.Employee" relationship="GENERALIZATION">
+      <point x="0.0" y="-84.5" />
+      <point x="568.7704166666667" y="457.0" />
+      <point x="685.9166666666667" y="457.0" />
+      <point x="0.0" y="62.0" />
+    </edge>
+    <edge source="Pharmacy.Manager" target="Pharmacy.Employee" relationship="GENERALIZATION">
+      <point x="183.66666666666674" y="-51.0" />
+      <point x="863.3537500000001" y="816.0" />
+      <point x="803.9445833333334" y="816.0" />
+      <point x="803.9445833333334" y="457.0" />
+      <point x="685.9166666666667" y="457.0" />
+      <point x="0.0" y="62.0" />
+    </edge>
+    <edge source="Pharmacy.Manager" target="Pharmacy.Staff" relationship="DEPENDENCY">
+      <point x="-183.66666666666663" y="-51.0" />
+      <point x="496.02041666666673" y="816.0" />
+      <point x="393.68708333333336" y="816.0" />
+      <point x="393.68708333333336" y="806.0" />
+      <point x="459.77041666666673" y="806.0" />
+      <point x="-109.0" y="84.5" />
+    </edge>
+    <edge source="Pharmacy.Customer" target="Pharmacy.Person" relationship="GENERALIZATION">
+      <point x="119.66666666666674" y="-62.0" />
+      <point x="1508.3125" y="1396.0" />
+      <point x="1564.3329166666667" y="1396.0" />
+      <point x="1564.3329166666667" y="281.0" />
+      <point x="1013.9745833333334" y="281.0" />
+      <point x="0.0" y="128.0" />
+    </edge>
+    <edge source="Pharmacy.Customer" target="Pharmacy.Prescription" relationship="DEPENDENCY">
+      <point x="-119.66666666666669" y="-62.0" />
+      <point x="1268.9791666666667" y="1396.0" />
+      <point x="1365.5783333333334" y="1396.0" />
+      <point x="1365.5783333333334" y="1386.0" />
+      <point x="1316.8329166666667" y="1386.0" />
+      <point x="-79.0" y="117.5" />
+    </edge>
+    <edge source="Pharmacy.Prescription" target="Pharmacy.Drug" relationship="DEPENDENCY">
+      <point x="-79.0" y="-117.5" />
+      <point x="1316.8329166666667" y="816.0" />
+      <point x="1160.3333333333335" y="816.0" />
+      <point x="1160.3333333333335" y="806.0" />
+      <point x="1267.3283333333334" y="806.0" />
+      <point x="-58.5" y="106.0" />
+    </edge>
+    <edge source="Pharmacy.TestDriver" target="Pharmacy.Manager" relationship="CREATE">
+      <point x="-18.625" y="-39.5" />
+      <point x="911.4120833333334" y="1356.0" />
+      <point x="679.6870833333334" y="1356.0" />
+      <point x="0.0" y="51.0" />
+    </edge>
+    <edge source="Pharmacy.AddEditStaffGUI" target="Pharmacy.DateChooser" relationship="CREATE">
+      <point x="-70.0" y="-249.0" />
+      <point x="0.0" y="150.5" />
+    </edge>
+    <edge source="Pharmacy.DateChooser.ButtonEventHandler" target="Pharmacy.DateChooser" relationship="DEPENDENCY">
+      <point x="0.0" y="39.5" />
+      <point x="191.25" y="457.0" />
+      <point x="122.0" y="457.0" />
+      <point x="0.0" y="-150.5" />
+    </edge>
+    <edge source="Pharmacy.AddEditDrugsGUI" target="Pharmacy.Drug" relationship="CREATE">
+      <point x="0.0" y="-139.0" />
+      <point x="1093.1870833333332" y="816.0" />
+      <point x="1160.3333333333335" y="816.0" />
+      <point x="1160.3333333333335" y="806.0" />
+      <point x="1267.3283333333334" y="806.0" />
+      <point x="-58.5" y="106.0" />
+    </edge>
+    <edge source="Pharmacy.Customer" target="Pharmacy.Prescription" relationship="TO_ONE">
+      <point x="0.0" y="-62.0" />
+      <point x="1388.6458333333335" y="1396.0" />
+      <point x="1474.8329166666667" y="1396.0" />
+      <point x="79.0" y="117.5" />
+    </edge>
+    <edge source="Pharmacy.AddEditStaffGUI" target="Pharmacy.Staff" relationship="CREATE">
+      <point x="70.0" y="-249.0" />
+      <point x="262.0" y="816.0" />
+      <point x="393.68708333333336" y="816.0" />
+      <point x="393.68708333333336" y="806.0" />
+      <point x="459.77041666666673" y="806.0" />
+      <point x="-109.0" y="84.5" />
+    </edge>
+    <edge source="Pharmacy.DateChooser.ButtonEventHandler" target="Pharmacy.DateChooser" relationship="INNER_CLASS">
+      <point x="-78.66666666666674" y="39.5" />
+      <point x="112.58333333333326" y="457.0" />
+      <point x="40.66666666666674" y="457.0" />
+      <point x="-81.33333333333326" y="-150.5" />
+    </edge>
+    <edge source="Pharmacy.TestDriver" target="Pharmacy.Staff" relationship="CREATE">
+      <point x="-55.875" y="-39.5" />
+      <point x="874.1620833333334" y="1366.0" />
+      <point x="393.68708333333336" y="1366.0" />
+      <point x="393.68708333333336" y="806.0" />
+      <point x="459.77041666666673" y="806.0" />
+      <point x="-109.0" y="84.5" />
+    </edge>
+    <edge source="Pharmacy.Employee" target="Pharmacy.Person" relationship="GENERALIZATION">
+      <point x="0.0" y="-62.0" />
+      <point x="685.9166666666667" y="281.0" />
+      <point x="1013.9745833333334" y="281.0" />
+      <point x="0.0" y="128.0" />
+    </edge>
+    <edge source="Pharmacy.TestDriver" target="Pharmacy.Prescription" relationship="CREATE">
+      <point x="55.875" y="-39.5" />
+      <point x="985.9120833333334" y="1396.0" />
+      <point x="1365.5783333333334" y="1396.0" />
+      <point x="1365.5783333333334" y="1386.0" />
+      <point x="1316.8329166666667" y="1386.0" />
+      <point x="-79.0" y="117.5" />
+    </edge>
+    <edge source="Pharmacy.DateChooser" target="Pharmacy.DateChooser.ButtonEventHandler" relationship="CREATE">
+      <point x="81.33333333333326" y="-150.5" />
+      <point x="203.33333333333326" y="457.0" />
+      <point x="269.91666666666674" y="457.0" />
+      <point x="78.66666666666674" y="39.5" />
+    </edge>
+    <edge source="Pharmacy.MainDriver" target="Pharmacy.AuthorisationGUI" relationship="CREATE">
+      <point x="0.0" y="-39.5" />
+      <point x="0.0" y="95.0" />
+    </edge>
+    <edge source="Pharmacy.MainMenuGUI" target="Pharmacy.AddEditDrugsGUI" relationship="CREATE">
+      <point x="59.0" y="-83.5" />
+      <point x="321.0" y="1376.0" />
+      <point x="1093.1870833333332" y="1376.0" />
+      <point x="0.0" y="139.0" />
+    </edge>
+    <edge source="Pharmacy.Manager" target="Pharmacy.Staff" relationship="TO_MANY">
+      <point x="0.0" y="-51.0" />
+      <point x="679.6870833333334" y="816.0" />
+      <point x="677.7704166666667" y="816.0" />
+      <point x="109.0" y="84.5" />
+    </edge>
+    <edge source="Pharmacy.AuthorisationGUI" target="Pharmacy.MainMenuGUI" relationship="CREATE">
+      <point x="0.0" y="-95.0" />
+      <point x="0.0" y="83.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.85" showDependencies="true" x="-119.50649350649337" y="1279.1764705882354" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

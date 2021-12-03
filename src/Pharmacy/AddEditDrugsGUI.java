@@ -77,9 +77,15 @@ public class AddEditDrugsGUI extends JFrame implements ActionListener {
             e.printStackTrace();
         }*/
 
-        /*
-         * Source: https://newbedev.com/how-do-i-populate-a-jcombobox-with-an-arraylist
-         * */
+        /*******************************************************************
+         *Title: How do I populate a JComboBox with an ArrayList?
+         *Author: unknown
+         *Site owner/sponsor: newbedev.com
+         *Date: unknown
+         *Code Version: Dec 01 2021
+         *Availability: https://newbedev.com/how-do-i-populate-a-jcombobox-with-an-arraylist (Accessed: Dec 01 2021)
+         *Modified: Code refactored
+         *******************************************************************/
         // Works better with serialisation, but I can't get it to work.
         int dArraySize = drugList.size() + 1;
         String[] dArray = new String[dArraySize];
@@ -90,10 +96,15 @@ public class AddEditDrugsGUI extends JFrame implements ActionListener {
         JComboBox<String> drugCombo = new JComboBox<>(dArray);
         drugCombo.setBounds(100, 7, 200, 20);
 
-        /*
-         * Source: https://stackoverflow.com/questions/58939/jcombobox-selection-change-listener
-         * */
-
+        /*******************************************************************
+         *Title: JComboBox Selection Change Listener?
+         *Author: Viacheslav
+         *Site owner/sponsor: stackoverflow.com
+         *Date: Jan 20 2013
+         *Code Version: Jan 20 2013
+         *Availability: https://stackoverflow.com/questions/58939/jcombobox-selection-change-listener (Accessed: Dec 01 2021)
+         *Modified: Code refactored
+         *******************************************************************/
         drugCombo.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent i) {
                 int index = drugCombo.getSelectedIndex();
@@ -115,9 +126,15 @@ public class AddEditDrugsGUI extends JFrame implements ActionListener {
 
         this.add(drugCombo);
 
-        /*
-         * Source: https://stackoverflow.com/questions/1614772/how-to-change-jframe-icon
-         */
+        /*******************************************************************
+         *Title: How to change JFrame icon [duplicate]
+         *Author: BFree
+         *Site owner/sponsor: stackoverflow.com
+         *Date: Oct 23 2009
+         *Code Version: Aug 31 2015
+         *Availability: https://stackoverflow.com/questions/1614772/how-to-change-jframe-icon (Accessed: Nov 29 2021)
+         *Modified: Code refactored
+         *******************************************************************/
         ImageIcon titleImg = new ImageIcon("src\\Pharmacy\\Icons\\cross.png");
         this.setIconImage(titleImg.getImage());
 

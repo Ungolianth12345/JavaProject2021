@@ -18,7 +18,15 @@ public class Employee extends Person {
 
     @Override
     public String toString() {
-        // Source: https://stackoverflow.com/questions/4169634/going-from-mm-dd-yyyy-to-dd-mmm-yyyy-in-java
+        /*******************************************************************
+         *Title: Going from MM/DD/YYYY to DD-MMM-YYYY in java
+         *Author: Brian Clements
+         *Site owner/sponsor: stackoverflow.com
+         *Date: Nov 12 2010
+         *Code Version: Nov 12 2010
+         *Availability: https://stackoverflow.com/questions/4169634/going-from-mm-dd-yyyy-to-dd-mmm-yyyy-in-java (Accessed: Nov 29 2021)
+         *Modified: Code refactored
+         *******************************************************************/
         DateFormat sdf = new SimpleDateFormat("dd MMM yyyy");
         String dateEmployed = sdf.format(getDateEmployed().getTime());
 
